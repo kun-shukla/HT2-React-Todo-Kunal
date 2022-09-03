@@ -7,11 +7,14 @@ function App() {
   const [todos, setTodos] = useState([
     { id: 1, todo: "walk the dog" },
     { id: 2, todo: "got to hampstead heath" },
-  ])
+  ]);
+  function handleClick(inputtedtext) {
+    return setTodos([inputtedtext, ...todos]);
+  }
   return (
     <div className="App">
-      <Input handleClick={handleClick}/>
-      <List todos={todos}/>
+      <Input handleClick={handleClick} />
+      <List todos={todos} />
     </div>
   );
 }
