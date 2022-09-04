@@ -8,7 +8,6 @@ function App() {
     { id: 1, todo: "walk the dog" },
     { id: 2, todo: "got to hampstead heath" },
   ]);
-  // "kmlm", "l,pll"]);
 
   function handleClick(inputtedText) {
     setTodos([...todos, { id: todos.length + 1, todo: inputtedText }]);
@@ -18,10 +17,18 @@ function App() {
   function deleteItem(index) {
     setTodos([...todos.slice(0, index), ...todos.slice(index + 1)]);
   }
+  function updateItem(index) {
+    // let inputtedText = prompt("Please update selected Todo and press 'OK'.");
+    setTodos([
+      ...todos.slice(0, index),
+      { ...todos[index], todo: "blah" },
+      ...todos.slice(index + 1),
+    ]);
+  }
   return (
     <div className="App">
       <Input handleClick={handleClick} />
-      <List todos={todos} deleteItem={deleteItem} />
+      <List todos={todos} deleteItem={deleteItem} updateItem={updateItem} />
     </div>
   );
 }
