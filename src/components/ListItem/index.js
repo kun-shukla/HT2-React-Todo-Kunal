@@ -1,10 +1,11 @@
-import React from 'react'
+import React from "react";
 
-export default function ListItem({todo,deleteItem,index}) {
+export default function ListItem({ todo, deleteItem, index }) {
+  console.log(todo);
   return (
     <div>
-        <li>{todo}</li>
-        <button onClick={()=>deleteItem(index)}>Delete</button>
+      <li key={todo.id}>{todo.todo}</li>
+      <button onClick={() => deleteItem(index)}>Delete</button>
     </div>
-  )
+  );
 }
