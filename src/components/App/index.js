@@ -4,6 +4,7 @@ import List from "../List";
 import "./App.css";
 
 function App() {
+  //state for todos array is set here
   const [todos, setTodos] = useState([
     { id: 1, todo: "walk the dog" },
     { id: 2, todo: "go to hampstead heath" },
