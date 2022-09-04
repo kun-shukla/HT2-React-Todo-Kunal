@@ -18,15 +18,17 @@ function App() {
     setTodos([...todos.slice(0, index), ...todos.slice(index + 1)]);
   }
   function updateItem(index) {
-    // let inputtedText = prompt("Please update selected Todo and press 'OK'.");
+    let inputtedText = prompt("Please update selected Todo and press 'OK'.");
+    console.log(inputtedText)
     setTodos([
       ...todos.slice(0, index),
-      { ...todos[index], todo: "blah" },
+      { ...todos[index], todo: inputtedText },
       ...todos.slice(index + 1),
     ]);
   }
   return (
     <div className="App">
+    <h1>React Todo List</h1>
       <Input handleClick={handleClick} />
       <List todos={todos} deleteItem={deleteItem} updateItem={updateItem} />
     </div>
