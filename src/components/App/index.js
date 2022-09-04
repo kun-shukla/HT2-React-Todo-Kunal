@@ -6,7 +6,7 @@ import "./App.css";
 function App() {
   const [todos, setTodos] = useState([
     { id: 1, todo: "walk the dog" },
-    { id: 2, todo: "got to hampstead heath" },
+    { id: 2, todo: "go to hampstead heath" },
   ]);
 
     //function to immutably add user inputted todo to the array
@@ -29,7 +29,7 @@ function App() {
       ...todos.slice(index + 1),
     ]);
   }
-  
+
    //rendering of Input field and List
   return (
     <div className="App">
